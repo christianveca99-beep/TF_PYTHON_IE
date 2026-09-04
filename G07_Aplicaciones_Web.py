@@ -61,6 +61,12 @@ with st.sidebar:
     g = st.number_input("Aceleración de la gravedad g (m/s²)", value=9.81, min_value=0.1, step=0.01)
 
     c1, c2 = st.columns(2)
+    Z = []
+    S = []
+    Tp = []
+    U = []
+    R = []
+    Tl = []
     with c1:
         Z = st.number_input("Factor de zonificación Z", value=0.45, min_value=0.0, step=0.01)
         S = st.number_input("Factor de suelo S", value=1.10, min_value=0.0, step=0.01)
