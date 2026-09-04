@@ -58,23 +58,18 @@ with st.sidebar:
     st.markdown("---")
     st.markdown("**Parámetros sísmicos (Norma E.030)**")
 
-    g = st.number_input("Aceleración de la gravedad g (m/s²)", value=9.81, min_value=0.1, step=0.01)
+    g = st.number_input("Aceleración de la gravedad g (m/s²)", value=9.81, min_value=0.1, step=None)
 
     c1, c2 = st.columns(2)
-    Z = []
-    S = []
-    Tp = []
-    U = []
-    R = []
-    Tl = []
+
     with c1:
-        Z = st.number_input("Factor de zonificación Z", value=0.45, min_value=0.0, step=0.01)
-        S = st.number_input("Factor de suelo S", value=1.10, min_value=0.0, step=0.01)
-        Tp = st.number_input("Periodo Tp (s)", value=0.6, min_value=0.01, step=0.01)
+        Z = st.number_input("Factor de zonificación Z", value=0.45, min_value=0.0, step=None)
+        S = st.number_input("Factor de suelo S", value=1.10, min_value=0.0, step=None)
+        Tp = st.number_input("Periodo Tp (s)", value=0.6, min_value=0.01, step=None)
     with c2:
-        U = st.number_input("Factor de uso U", value=1.00, min_value=0.0, step=0.01)
-        R = st.number_input("Coeficiente de reducción R", value=8.00, min_value=0.1, step=0.1)
-        Tl = st.number_input("Periodo Tl (s)", value=2.0, min_value=0.01, step=0.01)
+        U = st.number_input("Factor de uso U", value=1.00, min_value=0.0, step=None)
+        R = st.number_input("Coeficiente de reducción R", value=8.00, min_value=0.1, step=None)
+        Tl = st.number_input("Periodo Tl (s)", value=2.0, min_value=0.01, step=None)
 
     run = st.button("Analizar", type="primary", use_container_width=True)
 
