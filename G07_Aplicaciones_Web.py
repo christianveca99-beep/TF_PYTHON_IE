@@ -29,16 +29,16 @@ with st.sidebar:
         st.markdown(f"*Nivel {i + 1}*")
         c1, c2, c3, c4 = st.columns(4, gap="small")
         with c1:
-            wi = st.number_input(f"w{i+1}", value=120.0, min_value=0.01, step=1.0,
+            wi = st.number_input(f"w{i+1}", value=120.09, min_value=0.01, step=0.01,
                                   key=f"w_{i+1}")
         with c2:
-            kxi = st.number_input(f"kx{i+1}", value=25000.0, min_value=0.01, step=100.0,
+            kxi = st.number_input(f"kx{i+1}", value=49809.83, min_value=0.01, step=0.01,
                                    key=f"kx_{i+1}")
         with c3:
-            kyi = st.number_input(f"ky{i+1}", value=22000.0, min_value=0.01, step=100.0,
+            kyi = st.number_input(f"ky{i+1}", value=23364.00, min_value=0.01, step=0.01,
                                    key=f"ky_{i+1}")
         with c4:
-            hi = st.number_input(f"h{i+1}", value=3.0, min_value=0.1, step=0.1,
+            hi = st.number_input(f"h{i+1}", value=2.50, min_value=0.01, step=0.01,
                                   key=f"h_{i+1}")
         cc1, cc2, cc3, cc4 = st.columns(4, gap="small")
         with cc1:
