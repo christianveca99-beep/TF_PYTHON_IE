@@ -169,7 +169,11 @@ class Analisis_Espectral(Analisis_Modal):
         return F, Fr
 
     def Cortantes(self, F):
-        V = np.cumsum(F[::-1, :], axis=0)[::-1, :]
+        n_V = F.shape[0]
+        V = np.zeros((n_V, n_V))
+        V[0, :] = F[0, :]
+        for i in range(1, n_V):
+            V[i, :] = V[i - 1, :] + F[i, :]
         Vr = self.Combinacion_Modal(V)
         return V, Vr
 
