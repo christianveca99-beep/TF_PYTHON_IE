@@ -29,19 +29,19 @@ with st.sidebar:
         st.markdown(f"*Nivel {i + 1}*")
         c1, c2, c3, c4 = st.columns(4, gap="small")
         with c1:
-            wi = st.number_input(f"w{i}", value=120.0, min_value=0.01, step=1.0,
+            wi = st.number_input(f"w{i}", value=120.09, min_value=0.01, step=1.0,
                                   label_visibility="visible" if i == 0 else "collapsed",
                                   key=f"w_{i}")
         with c2:
-            kxi = st.number_input(f"kx{i}", value=25000.0, min_value=0.01, step=100.0,
+            kxi = st.number_input(f"kx{i}", value=49809.93, min_value=0.01, step=100.0,
                                    label_visibility="visible" if i == 0 else "collapsed",
                                    key=f"kx_{i}")
         with c3:
-            kyi = st.number_input(f"ky{i}", value=22000.0, min_value=0.01, step=100.0,
+            kyi = st.number_input(f"ky{i}", value=44074.17, min_value=0.01, step=100.0,
                                    label_visibility="visible" if i == 0 else "collapsed",
                                    key=f"ky_{i}")
         with c4:
-            hi = st.number_input(f"h{i}", value=3.0, min_value=0.1, step=0.1,
+            hi = st.number_input(f"h{i}", value=2.50, min_value=0.1, step=0.1,
                                   label_visibility="visible" if i == 0 else "collapsed",
                                   key=f"h_{i}")
         if i == 0:
