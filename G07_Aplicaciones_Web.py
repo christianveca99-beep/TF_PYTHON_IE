@@ -50,10 +50,10 @@ with st.sidebar:
         with cc4:
             st.caption("h (m)")
             
-        w.append(wi+1)
-        kx.append(kxi+1)
-        ky.append(kyi+1)
-        h.append(hi+1)
+        w.append(wi)
+        kx.append(kxi)
+        ky.append(kyi)
+        h.append(hi)
 
     st.markdown("---")
     st.markdown("**Parámetros sísmicos (Norma E.030)**")
