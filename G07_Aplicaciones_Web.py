@@ -44,20 +44,19 @@ with st.sidebar:
             hi = st.number_input(f"h{i}", value=2.50, min_value=0.1, step=0.1,
                                   label_visibility="visible" if i == 0 else "collapsed",
                                   key=f"h_{i}")
-        if i == 1:
-            cc1, cc2, cc3, cc4 = st.columns(4, gap="small")
-            with cc1:
-                st.caption("Peso (tnf)")
-            with cc2:
-                st.caption("Kx (tnf/m)")
-            with cc3:
-                st.caption("Ky (tnf/m)")
-            with cc4:
-                st.caption("h (m)")
-        w.append(wi)
-        kx.append(kxi)
-        ky.append(kyi)
-        h.append(hi)
+        cc1, cc2, cc3, cc4 = st.columns(4, gap="small")
+        with cc1:
+            st.caption("Peso (tnf)")
+        with cc2:
+            st.caption("Kx (tnf/m)")
+        with cc3:
+            st.caption("Ky (tnf/m)")
+        with cc4:
+            st.caption("h (m)")
+        w.append(wi+1)
+        kx.append(wi+1)
+        ky.append(wi+1)
+        h.append(wi+1)
 
     st.markdown("---")
     st.markdown("**Parámetros sísmicos (Norma E.030)**")
