@@ -29,17 +29,17 @@ with st.sidebar:
         st.markdown(f"*Nivel {i + 1}*")
         c1, c2, c3, c4 = st.columns(4, gap="small")
         with c1:
-            wi = st.number_input(f"w{i}", value=120.0, min_value=0.01, step=1.0,
-                                  key=f"w_{i}")
+            wi = st.number_input(f"w{i+1}", value=120.0, min_value=0.01, step=1.0,
+                                  key=f"w_{i+1}")
         with c2:
-            kxi = st.number_input(f"kx{i}", value=25000.0, min_value=0.01, step=100.0,
-                                   key=f"kx_{i}")
+            kxi = st.number_input(f"kx{i+1}", value=25000.0, min_value=0.01, step=100.0,
+                                   key=f"kx_{i+1}")
         with c3:
-            kyi = st.number_input(f"ky{i}", value=22000.0, min_value=0.01, step=100.0,
-                                   key=f"ky_{i}")
+            kyi = st.number_input(f"ky{i+1}", value=22000.0, min_value=0.01, step=100.0,
+                                   key=f"ky_{i+1}")
         with c4:
-            hi = st.number_input(f"h{i}", value=3.0, min_value=0.1, step=0.1,
-                                  key=f"h_{i}")
+            hi = st.number_input(f"h{i+1}", value=3.0, min_value=0.1, step=0.1,
+                                  key=f"h_{i+1}")
         cc1, cc2, cc3, cc4 = st.columns(4, gap="small")
         with cc1:
             st.caption("Peso (tnf)")
@@ -50,10 +50,10 @@ with st.sidebar:
         with cc4:
             st.caption("h (m)")
             
-        w.append(wi)
-        kx.append(kxi)
-        ky.append(kyi)
-        h.append(hi)
+        w.append(wi+1)
+        kx.append(kxi+1)
+        ky.append(kyi+1)
+        h.append(hi+1)
 
     st.markdown("---")
     st.markdown("**Parámetros sísmicos (Norma E.030)**")
