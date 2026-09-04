@@ -44,7 +44,7 @@ with st.sidebar:
             hi = st.number_input(f"h{i}", value=2.50, min_value=0.1, step=0.1,
                                   label_visibility="visible" if i == 0 else "collapsed",
                                   key=f"h_{i}")
-        if i == 0:
+        if i == 1:
             cc1, cc2, cc3, cc4 = st.columns(4, gap="small")
             with cc1:
                 st.caption("Peso (tnf)")
