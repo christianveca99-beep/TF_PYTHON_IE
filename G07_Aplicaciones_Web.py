@@ -67,7 +67,7 @@ with st.sidebar:
         Z = st.number_input("Factor de zonificación Z", value=0.45, min_value=0.0, 
                             step=0.01)
         S = st.number_input("Factor de suelo S", value=1.10, min_value=0.0, 
-                            step=0.01
+                            step=0.01)
         Tp = st.number_input("Periodo Tp (s)", value=0.6, min_value=0.01, 
                              step=0.01)
     with c2:
