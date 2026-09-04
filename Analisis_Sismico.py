@@ -102,12 +102,14 @@ class Analisis_Modal:
         return fig
 
     def Tablas(self, modes, T, MPF, EM, PM):
+        # Tabla para los modos de vibracion
         fmode, cmode = modes.shape
         n_mode = [("Modo " + str(i + 1)) for i in range(modes.shape[1])]
         story = {i: ("NIVEL " + str(fmode - i)) for i in range(fmode)}
         df_modes = pd.DataFrame(np.around(modes[::-1], 4), columns=n_mode)
         df_modes.rename(index=story, inplace=True)
 
+        # Tabla para los resultados de periodo y masas participativas
         mode_col = [i + 1 for i in range(cmode)]
         df_results = pd.DataFrame({"Modo": mode_col,
                                     "Periodo (s)": T,
@@ -190,6 +192,7 @@ class Analisis_Espectral(Analisis_Modal):
         fig = plt.figure(figsize=(20, 10))
         gs = fig.add_gridspec(1, 4, width_ratios=[1, 1, 1, 2])
 
+        # Grafico para desplazamietos por modo
         n_gr = self.x.shape[0]
         desp_modes = np.vstack((n_gr * [0], self.D))
         hn = [0] + self.h
@@ -205,38 +208,6 @@ class Analisis_Espectral(Analisis_Modal):
         ax1.legend(legend_ax1, loc='lower right')
         ax1.grid("silver")
         ax1.set_ylim([0, max(hn)])
-
-        desp_real = (0.75 * self.R) * np.hstack(([0], self.Dr))
-        desp_max = np.round(np.max(desp_real), 2)
-        ax2 = fig.add_subplot(gs[1])
-        ax2.plot(desp_real, hn, 'b-o', label='Δ max = ' + str(desp_max) + ' cm')
-        ax2.set_title('Desplazamientos reales (cm)', size=12)
-        ax2.legend(loc='lower right')
-        ax2.grid("silver")
-        ax2.set_ylim([0, max(hn)])
-
-        drift = [0]
-        for i in range(1, len(hn)):
-            d = (desp_real[i] - desp_real[i - 1]) / ((hn[i] - hn[i - 1]) / cm) * 1000
-            drift.append(d)
-        drift_max = np.round(max(drift), 2)
-        ax3 = fig.add_subplot(gs[2])
-        ax3.plot(drift, hn, 'b-o', label='Drift max = ' + str(drift_max) + ' (‰)')
-        ax3.set_title('Derivas (‰)', size=12)
-        ax3.legend(loc='lower right')
-        ax3.grid("silver")
-        ax3.set_ylim([0, max(hn)])
-
-        stories = [i + 1 for i in range(self.Vr.shape[0])]
-        ax4 = fig.add_subplot(gs[3])
-        ax4.barh(stories, self.Vr[::-1])
-        for index, value in enumerate(self.Vr[::-1]):
-            ax4.text(value, index + 1, str(np.round(value, 2)), va='center', ha='left', fontsize=10)
-        ax4.set_title('Cortantes reales (ton)', size=12)
-        ax4.set_xlim([0, max(self.Vr) * 1.2])
-
-        return fig
-
 
 # ==========================
 # Análisis Bidireccional E.030
