@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-from Analisis_Sismico_E030-2026 import Analisis_Modal, Analisis_Espectral, Analisis_Bidireccional, m, cm, mm, kgf, tnf
+from Analisis_Sismico_E030_2026 import Analisis_Modal, Analisis_Espectral, Analisis_Bidireccional, m, cm, mm, kgf, tnf
 
 st.set_page_config(page_title="Análisis Sísmico Dinámico Modal Espectral", layout="wide")
 
