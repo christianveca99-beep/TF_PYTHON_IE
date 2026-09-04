@@ -254,6 +254,7 @@ class Analisis_Bidireccional:
         return V_x, V_y, V_bi
 
     def Tabla_Resultados(self):
+        # Se excluye la base y solo se visualiza a partir de la Losa del 1er Nivel
         desplazamiento_x = self.desplazamiento_x[1:]
         desplazamiento_y = self.desplazamiento_y[1:]
         desplazamiento_bi = self.desplazamiento_bi[1:]
@@ -282,6 +283,7 @@ class Analisis_Bidireccional:
 
         fig, axs = plt.subplots(1, 3, figsize=(18, 8))
 
+        #Grafico para desplazamientos por eje y bidireccional
         desplazamiento_maximo_x = np.round(np.max(self.desplazamiento_x), 2)
         desplazamiento_maximo_y = np.round(np.max(self.desplazamiento_y), 2)
         desplazamiento_maximo_bi = np.round(np.max(self.desplazamiento_bi), 2)
@@ -293,6 +295,7 @@ class Analisis_Bidireccional:
         axs[0].grid('silver')
         axs[0].set_ylim([0, max(hn)])
 
+        #Grafico para derivas por eje y bidireccional
         drift_maxima_x = np.round(np.max(self.drift_x), 2)
         drift_maxima_y = np.round(np.max(self.drift_y), 2)
         drift_maxima_bi = np.round(np.max(self.drift_bi), 2)
@@ -304,6 +307,7 @@ class Analisis_Bidireccional:
         axs[1].grid('silver')
         axs[1].set_ylim([0, max(hn)])
 
+        #Grafico por cortantes por eje y bidireccional
         axs[2].barh(stories, self.V_bi[::-1], label='Cortante bi SRSS')
         for index, value in enumerate(self.V_bi[::-1]):
             axs[2].text(value, index + 1, str(np.round(value, 2)), va='center', ha='left', fontsize=10)
