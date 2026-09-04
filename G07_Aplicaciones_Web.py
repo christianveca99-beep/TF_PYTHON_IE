@@ -64,12 +64,12 @@ with st.sidebar:
 
     with c1:
         Z = round(float(st.text_input("Factor de zonificación Z", value="0.45")), 2)
-        S = round(st.text_input("Factor de suelo S", value="1.10")),2)
-        Tp = round(st.text_input("Periodo Tp (s)", value="0.60")),2)
+        S = round(float(st.text_input("Factor de suelo S", value="1.10")),2)
+        Tp = round(float(st.text_input("Periodo Tp (s)", value="0.60")),2)
     with c2:
-        U = round(st.text_input("Factor de uso U", value="1.00")),2)
-        R = round(st.text_input("Coeficiente de reducción R", value="8.00")),2)
-        Tl = round(st.text_input("Periodo Tl (s)", value="2.00")).2)
+        U = round(float(st.text_input("Factor de uso U", value="1.00")),2)
+        R = round(float(st.text_input("Coeficiente de reducción R", value="8.00")),2)
+        Tl = round(float(st.text_input("Periodo Tl (s)", value="2.00")),2)
 
     run = st.button("Analizar", type="primary", use_container_width=True)
 
