@@ -37,10 +37,10 @@ with st.sidebar:
         with c4:
             hi = st.number_input("h (m)", value=2.50, min_value=0.1, step=0.1, key=f"h_{i}")
             
-        w.append(wi+1)
-        kx.append(wi+1)
-        ky.append(wi+1)
-        h.append(wi+1)
+        w.append(wi)
+        kx.append(wi)
+        ky.append(wi)
+        h.append(wi)
 
     st.markdown("---")
     st.markdown("**Parámetros sísmicos (Norma E.030)**")
