@@ -57,26 +57,19 @@ with st.sidebar:
 
     st.markdown("---")
     st.markdown("**Parámetros sísmicos (Norma E.030)**")
-    g = []
-    Z = [] 
-    S = []
-    Tp = []
-    U = []
-    R = []
-    Tl = []
 
-    g = st.number_input("Aceleración de la gravedad g (m/s²)")
+    g = st.number_input("Aceleración de la gravedad g (m/s²)", value=9.81, min_value=0.1, step=0.01, label_visibility="collapsed")
 
     c1, c2 = st.columns(2)
 
     with c1:
-        Z = st.number_input("Factor de zonificación Z")
-        S = st.number_input("Factor de suelo S")
-        Tp = st.number_input("Periodo Tp (s)")
-    with c2:
-        U = st.number_input("Factor de uso U")
-        R = st.number_input("Coeficiente de reducción R")
-        Tl = st.number_input("Periodo Tl (s)")
+        Z = st.number_input("Factor de zonificación Z", value=0.45, min_value=0.0, step=0.01, label_visibility="collapsed")
+        S = st.number_input("Factor de suelo S", value=1.10, min_value=0.0, step=0.01, label_visibility="collapsed")
+        Tp = st.number_input("Periodo Tp (s)", value=0.6, min_value=0.01, step=0.01, label_visibility="collapsed")
+    with c2
+        U = st.number_input("Factor de uso U", value=1.00, min_value=0.0, step=0.01, label_visibility="collapsed")
+        R = st.number_input("Coeficiente de reducción R", value=8.00, min_value=0.1, step=0.1, label_visibility="collapsed")
+        Tl = st.number_input("Periodo Tl (s)", value=2.0, min_value=0.01, step=0.01, label_visibility="collapsed")
 
     run = st.button("Analizar", type="primary", use_container_width=True)
 
