@@ -10,7 +10,7 @@ st.set_page_config(page_title="Análisis Sísmico Dinámico Modal Espectral", la
 with st.sidebar:
     st.image("Image.jpg", width=150)
     st.header('Curso: Python aplicado a la Ingeniería Estructural')
-    st.subheader('Creado por: Niccolas Villegas\n')
+    st.subheader('Creado por: Christian Velasco\n')
     st.caption('Análisis Dinámico Modal Espectral Bidireccional - Norma E.030 (2026)')
     st.write('')
 
