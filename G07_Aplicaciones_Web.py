@@ -20,27 +20,61 @@ with st.sidebar:
     with r2:
         nlevels = st.number_input("nlevels", value=4, min_value=1, step=1, label_visibility="collapsed")
 
-    st.markdown("**Peso, rigidez y altura por entrepiso**")
-    w = []
-    kx = []
-    ky = []
-    h = []
-    for i in range(int(nlevels)):
-        st.markdown(f"*Nivel {i + 1}*")
-        c1, c2, c3, c4 = st.columns(4, gap="small")
-        with c1:
-            wi = st.number_input("Peso (tnf)", value=120.09, min_value=0.01, step=1.0, key=f"w_{i}")
-        with c2:
-            kxi = st.number_input("Kx (tnf/m)", value=49809.93, min_value=0.01, step=100.0, key=f"kx_{i}")
-        with c3:
-            kyi = st.number_input("Ky (tnf/m)", value=44074.17, min_value=0.01, step=100.0, key=f"ky_{i}")
-        with c4:
-            hi = st.number_input("h (m)", value=2.50, min_value=0.1, step=0.1, key=f"h_{i}")
-            
-        w.append(wi)
-        kx.append(wi)
-        ky.append(wi)
-        h.append(wi)
+st.markdown("**Peso, rigidez y altura por entrepiso**")
+w, kx, ky, h = [], [], [], []
+
+for i in range(int(nlevels)):
+    st.markdown(f"*Nivel {i + 1}*")
+    c1, c2, c3, c4 = st.columns(4, gap="small")
+
+    with c1:
+        st.caption("Peso (tnf)")
+        wi = st.number_input(
+            "w",
+            value=120.09,
+            min_value=0.01,
+            step=1.0,
+            key=f"w_{i}",
+            label_visibility="collapsed",
+        )
+
+    with c2:
+        st.caption("Kx (tnf/m)")
+        kxi = st.number_input(
+            "kx",
+            value=49809.93,
+            min_value=0.01,
+            step=100.0,
+            key=f"kx_{i}",
+            label_visibility="collapsed",
+        )
+
+    with c3:
+        st.caption("Ky (tnf/m)")
+        kyi = st.number_input(
+            "ky",
+            value=44074.17,
+            min_value=0.01,
+            step=100.0,
+            key=f"ky_{i}",
+            label_visibility="collapsed",
+        )
+
+    with c4:
+        st.caption("h (m)")
+        hi = st.number_input(
+            "h",
+            value=2.50,
+            min_value=0.1,
+            step=0.1,
+            key=f"h_{i}",
+            label_visibility="collapsed",
+        )
+
+    w.append(wi)
+    kx.append(kxi)
+    ky.append(kyi)
+    h.append(hi)
 
     st.markdown("---")
     st.markdown("**Parámetros sísmicos (Norma E.030)**")
