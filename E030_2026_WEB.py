@@ -77,7 +77,6 @@ with st.sidebar:
 # CUERPO PRINCIPAL
 # ============================================================
 st.title('Análisis Dinámico Modal Espectral Bidireccional')
-st.caption('Adaptado del notebook de análisis sísmico según la Norma E.030 (2026)')
 
 if not run:
     st.info("Completa los datos en la barra lateral y presiona **Analizar** para ejecutar el modelo.")
