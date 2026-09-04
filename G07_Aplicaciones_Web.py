@@ -70,7 +70,6 @@ with st.sidebar:
         R = st.number_input("Coeficiente de reducción R", value=8.00, min_value=0.1, step=0.1)
         Tl = st.number_input("Periodo Tl (s)", value=2.0, min_value=0.01, step=0.01)
 
-    run = st.button("Analizar", type="primary", use_container_width=True)
 
 # ============================================================
 # CUERPO PRINCIPAL
